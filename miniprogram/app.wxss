@@ -1,0 +1,2 @@
+page{background:#f5f1e6;color:#172824;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}.page{min-height:100vh;padding-bottom:40rpx}.card{background:#faf7ef;border:1rpx solid #d9d1bd;border-radius:16rpx}.eyebrow{font-size:18rpx;letter-spacing:5rpx;color:#a33a2b;font-weight:700}.title{font-family:STKaiti,KaiTi,serif;color:#183b33}.primary{background:#a33a2b!important;color:#fff!important;border-radius:8rpx;font-size:26rpx}.primary::after{border:0}.muted{color:#8a857c}.safe-bottom{padding-bottom:calc(40rpx + env(safe-area-inset-bottom))}
+

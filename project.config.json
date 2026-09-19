@@ -1,0 +1,8 @@
+{
+  "description": "Lengthé 接发门店预约微信小程序",
+  "miniprogramRoot": "miniprogram/",
+  "compileType": "miniprogram",
+  "appid": "touristappid",
+  "projectname": "lengthe-hair-booking",
+  "setting": { "es6": true, "enhance": true, "postcss": true, "minified": true }
+}

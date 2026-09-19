@@ -1,0 +1,9 @@
+Page({
+  data:{stores:[],services:[],storeIndex:0,serviceIndex:0,dayIndex:0,timeIndex:1,days:[],times:['12:00','14:00','16:00','18:00','20:00','22:00','24:00']},
+  onLoad(){const app=getApp(),today=new Date(),days=[];for(let i=0;i<7;i++){const d=new Date(today);d.setDate(today.getDate()+i);days.push({label:['周日','周一','周二','周三','周四','周五','周六'][d.getDay()],date:`${d.getMonth()+1}/${d.getDate()}`,value:d.getTime()})}this.setData({stores:app.globalData.stores,days});this.reloadServices()},
+  onShow(){this.reloadServices()},
+  reloadServices(){const services=getApp().getProducts(),stored=wx.getStorageSync('bookingServiceId'),serviceIndex=Math.max(0,services.findIndex(x=>x.id===stored));this.setData({services,serviceIndex})},
+  chooseStore(e){this.setData({storeIndex:+e.currentTarget.dataset.index})},chooseService(e){this.setData({serviceIndex:+e.currentTarget.dataset.index})},chooseDay(e){this.setData({dayIndex:+e.currentTarget.dataset.index})},chooseTime(e){this.setData({timeIndex:+e.currentTarget.dataset.index})},
+  contact(){wx.showActionSheet({itemList:['微信客服咨询','拨打客服 400-888-1212'],success:({tapIndex})=>tapIndex===1&&wx.makePhoneCall({phoneNumber:'4008881212'})})},
+  submit(){const {stores,services,storeIndex,serviceIndex,days,dayIndex,times,timeIndex}=this.data,orders=wx.getStorageSync('orders')||[],service=services[serviceIndex];if(!service)return wx.showToast({title:'暂无可预约商品',icon:'none'});orders.unshift({id:`BK${Date.now()}`,store:stores[storeIndex],service,day:days[dayIndex],time:times[timeIndex],status:'待到店',createdAt:Date.now()});wx.setStorageSync('orders',orders);wx.showModal({title:'预约成功',content:`${stores[storeIndex].name}\n${days[dayIndex].date} ${times[timeIndex]}`,showCancel:false,confirmText:'查看预约',success:()=>wx.switchTab({url:'/pages/profile/index'})})}
+})

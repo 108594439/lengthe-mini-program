@@ -1,0 +1,1 @@
+{ "desc": "Lengthé 小程序页面", "rules": [{ "action": "allow", "page": "*" }] }

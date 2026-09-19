@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/booking/index",
+    "pages/circle/index",
+    "pages/profile/index",
+    "pages/orders/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "青丝雅集",
+    "navigationBarBackgroundColor": "#193931",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f5f1e6"
+  },
+  "tabBar": {
+    "color": "#8b877d",
+    "selectedColor": "#a33a2b",
+    "backgroundColor": "#f8f4ea",
+    "borderStyle": "black",
+    "list": [
+      { "pagePath": "pages/home/index", "text": "首页" },
+      { "pagePath": "pages/booking/index", "text": "预约" },
+      { "pagePath": "pages/circle/index", "text": "交流圈" },
+      { "pagePath": "pages/profile/index", "text": "我的" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
